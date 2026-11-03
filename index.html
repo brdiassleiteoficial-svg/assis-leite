@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Portfólio profissional de Assis Leite. Conheça meus projetos, habilidades e entre em contato.">
   <meta name="theme-color" content="#061a36">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Assis Leite">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
   <title>Assis Leite | Portfólio</title>
 
   <style>
@@ -555,7 +565,7 @@
       transform: translateY(-4px);
     }
 
-    /* ANIMAÇÕES DE ENTRADA */
+    /* ANIMAÇÕES */
 
     .revelar {
       opacity: 0;
@@ -754,6 +764,7 @@
 
   <header>
     <div class="header-inner">
+
       <a class="logo" href="#inicio" aria-label="Assis Leite - início">
         &lt;/&gt; Assis <span>Leite</span>
       </a>
@@ -771,12 +782,13 @@
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
       </nav>
+
     </div>
   </header>
 
   <main>
 
-    <!-- APRESENTAÇÃO PRINCIPAL -->
+    <!-- APRESENTAÇÃO -->
 
     <section class="hero" id="inicio">
       <div class="hero-inner">
@@ -1097,7 +1109,7 @@
 
   </a>
 
-  <!-- FUNCIONALIDADES DO MENU E ANIMAÇÕES -->
+  <!-- MENU E ANIMAÇÕES -->
 
   <script>
     // MENU RESPONSIVO
@@ -1156,9 +1168,7 @@
           entradas.forEach(function (entrada) {
 
             if (entrada.isIntersecting) {
-
               entrada.target.classList.add("ativo");
-
               obs.unobserve(entrada.target);
             }
 
@@ -1169,17 +1179,34 @@
       );
 
       elementos.forEach(function (elemento) {
-
         elemento.classList.add("revelar");
-
         observador.observe(elemento);
-
       });
 
     } else {
 
       elementos.forEach(function (elemento) {
         elemento.classList.add("ativo");
+      });
+
+    }
+
+    // REGISTRO DO SERVICE WORKER - PWA
+
+    if ("serviceWorker" in navigator) {
+
+      window.addEventListener("load", function () {
+
+        navigator.serviceWorker.register("./service-worker.js")
+
+          .then(function (registro) {
+            console.log("PWA registrado com sucesso!");
+          })
+
+          .catch(function (erro) {
+            console.log("Erro ao registrar PWA:", erro);
+          });
+
       });
 
     }
