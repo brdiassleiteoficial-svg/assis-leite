@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio profissional de Assis Leite. Conheça meus projetos, habilidades e entre em contato.">
+  <meta name="theme-color" content="#061a36">
+  <title>Assis Leite | Portfólio</title>
+
+  <style>
+    :root {
+      --navy: #061a36;
+      --navy-2: #0b2b52;
+      --blue: #078ff0;
+      --blue-light: #20b5ff;
+      --text: #10213c;
+      --muted: #53657d;
+      --surface: #ffffff;
+      --soft: #edf4fc;
+      --green: #16a34a;
+      --shadow: 0 14px 38px rgba(5, 26, 54, .12);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.menu-aberto {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .azul {
+      color: var(--blue-light);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* CABEÇALHO E MENU */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 26, 54, .97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .13);
+    }
+
+    .header-inner {
+      width: min(1180px, 92%);
+      min-height: 76px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--blue-light);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #e8f2ff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: color .25s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--blue-light);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 12px;
+      color: white;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* APRESENTAÇÃO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 82% 25%, rgba(32,181,255,.18), transparent 28%),
+        linear-gradient(135deg, var(--navy), #103b70);
+      color: white;
+      padding: 78px 0;
+      min-height: 550px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      width: min(1120px, 90%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .intro {
+      color: var(--blue-light);
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5.4vw, 60px);
+      line-height: 1.12;
+      margin: 16px 0;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h2 {
+      font-size: clamp(18px, 2.5vw, 23px);
+      color: #e4efff;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 590px;
+      color: #d7e5f5;
+      margin: 20px 0 26px;
+      font-size: 17px;
+    }
+
+    .hero-photo {
+      width: min(100%, 370px);
+      justify-self: center;
+      position: relative;
+    }
+
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      inset: 18px -15px -15px 18px;
+      border: 2px solid var(--blue-light);
+      border-radius: 24px;
+      opacity: .7;
+    }
+
+    .hero-photo img {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255,255,255,.18);
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.3);
+    }
+
+    /* BOTÕES */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      margin: 5px 7px 5px 0;
+      font-weight: 800;
+      font-size: 14px;
+      border: 2px solid transparent;
+      transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 8px 20px rgba(7,143,240,.25);
+    }
+
+    .btn-blue:hover {
+      background: #0078d2;
+      box-shadow: 0 12px 25px rgba(7,143,240,.32);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.75);
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.12);
+    }
+
+    /* DESTAQUES */
+
+    .highlights {
+      background: #041329;
+      color: white;
+      padding: 28px 0;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .highlight {
+      padding: 8px;
+    }
+
+    .highlight span {
+      display: block;
+      color: var(--blue-light);
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .highlight strong {
+      font-size: 14px;
+    }
+
+    /* SOBRE MIM */
+
+    .about {
+      padding: 76px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-main h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      margin-bottom: 18px;
+    }
+
+    .about-main p {
+      color: #34445d;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .about-card {
+      background: var(--soft);
+      text-align: center;
+      padding: 22px 12px;
+      border-radius: 15px;
+      border: 1px solid #e1ecf8;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card span {
+      display: block;
+      color: var(--blue);
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    .about-card strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* HABILIDADES */
+
+    .skills {
+      background: var(--soft);
+      padding: 76px 0;
+    }
+
+    .skill-list {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .skill {
+      margin: 22px 0;
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 8px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .skill-top span:last-child {
+      color: var(--blue);
+    }
+
+    .bar {
+      height: 12px;
+      background: #d3dfed;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .bar div {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      transition: width 1.2s ease;
+    }
+
+    .skills.ativo .bar div {
+      width: var(--nivel);
+    }
+
+    /* PROJETOS */
+
+    .projects {
+      padding: 76px 0;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #f0f5fc;
+      border: 1px solid #e2ebf6;
+      box-shadow: 0 8px 24px rgba(8,36,74,.06);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .project img {
+      display: block;
+      width: 100%;
+      height: 205px;
+      object-fit: cover;
+      background: #dce8f5;
+    }
+
+    .project-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 21px;
+    }
+
+    .project h3 {
+      color: #087bd0;
+      font-size: 19px;
+    }
+
+    .project p {
+      color: var(--muted);
+      margin: 9px 0 16px;
+      font-size: 14px;
+      flex: 1;
+    }
+
+    .project .btn {
+      margin-top: auto;
+      padding: 10px 17px;
+      font-size: 13px;
+    }
+
+    /* CONTATO */
+
+    .contact {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(32,181,255,.17), transparent 40%),
+        linear-gradient(135deg, #08244a, #061a36);
+      color: white;
+      padding: 76px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(29px, 4vw, 39px);
+    }
+
+    .contact p {
+      color: #d7e5f5;
+      max-width: 620px;
+      margin: 15px auto;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--green);
+      color: white;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 800;
+      margin: 18px 0;
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background: #12823c;
+      transform: translateY(-3px);
+    }
+
+    .contact-note {
+      font-size: 13px;
+      opacity: .85;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: #041329;
+      padding: 30px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    footer h3 {
+      font-size: 21px;
+    }
+
+    footer p {
+      color: #aabbd1;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    /* WHATSAPP FLUTUANTE */
+
+    .float-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: white;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 6px 22px rgba(0,0,0,.22);
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .float-whatsapp:hover {
+      background: #12823c;
+      transform: translateY(-4px);
+    }
+
+    /* ANIMAÇÕES DE ENTRADA */
+
+    .revelar {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .revelar.ativo {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ACESSIBILIDADE */
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #ffcc55;
+      outline-offset: 4px;
+    }
+
+    /* TABLETS */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        gap: 35px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* CELULARES */
+
+    @media (max-width: 700px) {
+      html {
+        scroll-padding-top: 72px;
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 5% 22px;
+        background: var(--navy);
+        box-shadow: 0 12px 20px rgba(0,0,0,.2);
+        transform: translateY(-12px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+      }
+
+      nav.aberto {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      nav a {
+        padding: 13px 8px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        font-size: 15px;
+      }
+
+      .hero {
+        padding: 54px 0 62px;
+        min-height: auto;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 36px;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+      }
+
+      .hero-photo {
+        width: min(75%, 290px);
+      }
+
+      .hero-photo::before {
+        inset: 12px -10px -10px 12px;
+      }
+
+      .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .about,
+      .skills,
+      .projects,
+      .contact {
+        padding-top: 58px;
+        padding-bottom: 58px;
+      }
+
+      .about-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card {
+        padding: 17px;
+      }
+
+      .project-list {
+        grid-template-columns: 1fr;
+        gap: 19px;
+      }
+
+      .project {
+        max-width: 480px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .project img {
+        height: 215px;
+      }
+
+      .float-whatsapp {
+        right: 13px;
+        bottom: 13px;
+        padding: 12px 15px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .btn {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .float-whatsapp {
+        font-size: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .revelar {
+        opacity: 1;
+        transform: none;
+      }
+
+      .bar div {
+        width: var(--nivel);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CABEÇALHO -->
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="#inicio" aria-label="Assis Leite - início">
+        &lt;/&gt; Assis <span>Leite</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu">☰</button>
+
+      <nav id="menu" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO PRINCIPAL -->
+
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+
+        <div class="hero-text">
+
+          <p class="intro">
+            DESENVOLVIMENTO • TECNOLOGIA • INOVAÇÃO
+          </p>
+
+          <h1>
+            Olá! Seja bem-vindo ao meu espaço digital.
+          </h1>
+
+          <h2>
+            Sou <span class="azul">Assis Leite</span><br>
+            Desenvolvedor e Empreendedor Digital
+          </h2>
+
+          <p class="hero-description">
+            Transformando ideias em soluções digitais, com criatividade,
+            tecnologia e dedicação.
+          </p>
+
+          <a href="#projetos" class="btn btn-blue">
+            Conheça meus projetos <span aria-hidden="true">→</span>
+          </a>
+
+          <a href="#contato" class="btn btn-outline">
+            Entre em contato
+          </a>
+
+        </div>
+
+        <div class="hero-photo">
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7N2JANQ7mxD8YUuFMMXW_yA7axehWxSruVAfgZuVs57en9HLZZRz8mPz9N91FX0zuc7JPngPMOw2w04V-kXFh3Vc77_bmNDiMMNwmSvuGR7b8bJZFPxuUM9AxlUkO0-JxiImpGSt_czPv4wxV9h5UKqyZLHk4yKtfSf0scAX2LUlfMZWR9OMhjFkQ7aE/s1254/Retrato%20profissional%20com%20camisa%20azul-marinho.png"
+            alt="Foto profissional de Assis Leite"
+            loading="eager">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DESTAQUES -->
+
+    <section class="highlights" aria-label="Destaques profissionais">
+      <div class="container highlight-grid">
+
+        <div class="highlight">
+          <span>&lt;/&gt;</span>
+          <strong>Desenvolvimento Web</strong>
+        </div>
+
+        <div class="highlight">
+          <span>✧</span>
+          <strong>Criatividade e Inovação</strong>
+        </div>
+
+        <div class="highlight">
+          <span>✓</span>
+          <strong>Compromisso e Resultados</strong>
+        </div>
+
+        <div class="highlight">
+          <span>↗</span>
+          <strong>Aprendizado Contínuo</strong>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+
+    <section class="about revelar" id="sobre">
+      <div class="container about-grid">
+
+        <div class="about-main">
+
+          <h2>
+            Sobre <span style="color:#078ff0">Mim</span>
+          </h2>
+
+          <p>
+            Sou apaixonado por tecnologia, desenvolvimento e soluções criativas.
+            Meu objetivo é criar projetos que facilitem a vida das pessoas,
+            unindo conhecimento, experiência e dedicação em cada trabalho.
+          </p>
+
+          <p>
+            Acredito que a inovação, o planejamento e a dedicação são
+            fundamentais para alcançar bons resultados.
+          </p>
+
+          <a href="#contato" class="btn btn-blue">
+            Saiba mais <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+        <div class="about-cards">
+
+          <div class="about-card">
+            <span>★</span>
+            <strong>Experiência</strong>
+            <p>Em projetos digitais</p>
+          </div>
+
+          <div class="about-card">
+            <span>◆</span>
+            <strong>Conhecimento</strong>
+            <p>Busca constante</p>
+          </div>
+
+          <div class="about-card">
+            <span>✓</span>
+            <strong>Qualidade</strong>
+            <p>Em tudo que faço</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+
+    <section class="skills revelar" id="habilidades">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>
+            Minhas <span style="color:#078ff0">Habilidades</span>
+          </h2>
+          <p>Conhecimentos e competências profissionais.</p>
+        </div>
+
+        <div class="skill-list">
+
+          <div class="skill">
+            <div class="skill-top">
+              <span>Tecnologia e ferramentas digitais</span>
+              <span>85%</span>
+            </div>
+            <div class="bar">
+              <div style="--nivel:85%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top">
+              <span>Desenvolvimento de projetos</span>
+              <span>90%</span>
+            </div>
+            <div class="bar">
+              <div style="--nivel:90%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top">
+              <span>Criatividade e inovação</span>
+              <span>80%</span>
+            </div>
+            <div class="bar">
+              <div style="--nivel:80%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top">
+              <span>Organização e planejamento</span>
+              <span>90%</span>
+            </div>
+            <div class="bar">
+              <div style="--nivel:90%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+
+    <section class="projects revelar" id="projetos">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>
+            Meus <span style="color:#078ff0">Projetos</span>
+          </h2>
+          <p>Conheça algumas ideias e trabalhos que desenvolvo.</p>
+        </div>
+
+        <div class="project-list">
+
+          <article class="project">
+
+            <img
+              src="https://placehold.co/600x350/078ff0/ffffff.png?text=SITE+DE+VENDAS"
+              alt="Prévia ilustrativa de site de vendas"
+              loading="lazy">
+
+            <div class="project-content">
+              <h3>🛒 Site de Vendas</h3>
+
+              <p>
+                Projeto de loja virtual para apresentar produtos,
+                divulgar ofertas e facilitar compras pela internet.
+              </p>
+
+              <a href="#contato" class="btn btn-blue">
+                Tenho interesse <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+          </article>
+
+          <article class="project">
+
+            <img
+              src="https://placehold.co/600x350/0b2850/ffffff.png?text=SITE+DE+NOTICIAS"
+              alt="Prévia ilustrativa de site de notícias"
+              loading="lazy">
+
+            <div class="project-content">
+              <h3>📰 Site de Notícias</h3>
+
+              <p>
+                Plataforma de notícias e informações, com conteúdos
+                sobre acontecimentos, atualidades e novidades.
+              </p>
+
+              <a href="#contato" class="btn btn-blue">
+                Tenho interesse <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+          </article>
+
+          <article class="project">
+
+            <img
+              src="https://placehold.co/600x350/16a34a/ffffff.png?text=SAUDE+E+BOA+FORMA"
+              alt="Prévia ilustrativa de site de saúde e bem-estar"
+              loading="lazy">
+
+            <div class="project-content">
+              <h3>💪 Saúde e Boa Forma</h3>
+
+              <p>
+                Projeto voltado para exercícios físicos, qualidade de vida,
+                alimentação e bem-estar.
+              </p>
+
+              <a href="#contato" class="btn btn-blue">
+                Tenho interesse <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+
+    <section class="contact revelar" id="contato">
+
+      <h2>
+        Vamos <span class="azul">Conversar?</span>
+      </h2>
+
+      <p>
+        Estou disponível para conversar sobre projetos, ideias, parcerias
+        e novas oportunidades.
+      </p>
+
+      <a
+        href="https://wa.me/5584988251134?text=Ol%C3%A1%2C%20Assis!%20Vim%20pelo%20seu%20portf%C3%B3lio."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-btn">
+
+        <span aria-hidden="true">✆</span>
+        FALAR PELO WHATSAPP
+
+      </a>
+
+      <p class="contact-note">
+        Clique no botão para iniciar uma conversa diretamente pelo WhatsApp.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+    <h3>Assis <span class="azul">Leite</span></h3>
+    <p>© 2026 - Todos os direitos reservados.</p>
+    <p>TECNOLOGIA • CRIATIVIDADE • RESULTADOS</p>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+
+  <a
+    href="https://wa.me/5584988251134?text=Ol%C3%A1%2C%20Assis!"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="float-whatsapp"
+    aria-label="Conversar com Assis pelo WhatsApp">
+
+    <span aria-hidden="true">✆</span>
+    WhatsApp
+
+  </a>
+
+  <!-- FUNCIONALIDADES DO MENU E ANIMAÇÕES -->
+
+  <script>
+    // MENU RESPONSIVO
+
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    function fecharMenu() {
+      menu.classList.remove("aberto");
+      menuBtn.textContent = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.setAttribute("aria-label", "Abrir menu");
+      document.body.classList.remove("menu-aberto");
+    }
+
+    menuBtn.addEventListener("click", function () {
+      const aberto = menu.classList.toggle("aberto");
+
+      menuBtn.textContent = aberto ? "✕" : "☰";
+
+      menuBtn.setAttribute("aria-expanded", String(aberto));
+
+      menuBtn.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+      );
+
+      document.body.classList.toggle("menu-aberto", aberto);
+    });
+
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", fecharMenu);
+    });
+
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key === "Escape") {
+        fecharMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 700) {
+        fecharMenu();
+      }
+    });
+
+    // ANIMAÇÕES AO ROLAR A PÁGINA
+
+    const elementos = document.querySelectorAll(".revelar, .highlight");
+
+    if ("IntersectionObserver" in window) {
+
+      const observador = new IntersectionObserver(
+        function (entradas, obs) {
+
+          entradas.forEach(function (entrada) {
+
+            if (entrada.isIntersecting) {
+
+              entrada.target.classList.add("ativo");
+
+              obs.unobserve(entrada.target);
+            }
+
+          });
+
+        },
+        { threshold: 0.12 }
+      );
+
+      elementos.forEach(function (elemento) {
+
+        elemento.classList.add("revelar");
+
+        observador.observe(elemento);
+
+      });
+
+    } else {
+
+      elementos.forEach(function (elemento) {
+        elemento.classList.add("ativo");
+      });
+
+    }
+  </script>
+
+</body>
+</html>
